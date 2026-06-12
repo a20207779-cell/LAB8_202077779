@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/navbar.html :: header( title = 'Empleados')"></head>
+<body>
+<div class="container">
+    <nav th:replace="fragments/navbar.html :: navbar( active = 'Employee')"></nav>
+    <h2>Nuevo Equipo</h2>
+    <hr/>
+    <form th:action="@{'/employee/save'}" method="post">
+        <div class="form-group">
+            <label for="firstname">Nombre del equipo </label>
+            <input type="text" class="form-control" name="firstname" id="firstname"/>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Tag</label>
+            <input type="text" class="form-control" name="lastname" id="lastname"/>
+        </div>
+        <div class="form-group">
+            <label for="title">Nombre del capitan</label>
+            <input type="text" class="form-control" name="title" id="title"/>
+        </div>
+        <div class="form-group">
+            <label for="titleofcourtesy">Cantidad de jugadores</label>
+            <input type="text" class="form-control" name="titleofcourtesy" placeholder="Mr. Ms. Dr. etc"
+                   id="titleofcourtesy"/>
+        </div>
+        <div class="form-group">
+            <label for="birthdate">Juego</label>
+            <input type="text" class="form-control" name="birthdateStr" placeholder="dd-MM-yyyy" id="birthdate"/>
+        </div>
+        <div class="form-group">
+            <label for="country">Pais</label>
+            <input type="text" class="form-control" name="country" id="country"/>
+        </div>
+        <div class="form-group">
+            <label for="postalcode">Correo de contacto</label>
+            <input type="text" class="form-control" name="postalcode" id="postalcode"/>
+        </div>
+        <div class="form-group">
+            <label for="homephone">Teléfono</label>
+            <input type="text" class="form-control" name="homephone" id="homephone"/>
+        </div>
+
+        <a th:href="@{'/employee'}" class="btn btn-danger">Cancelar</a>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+</div>
+</body>
+</html>
