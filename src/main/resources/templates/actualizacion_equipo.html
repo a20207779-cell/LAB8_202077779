@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/navbar.html :: header( title = 'Empleados')"></head>
+<body>
+<div class="container">
+    <nav th:replace="fragments/navbar.html :: navbar( active = 'Employee')"></nav>
+    <h2>Actualizar equipo</h2>
+    <hr/>
+    <form th:action="@{'/employee/save'}" method="post">
+        <input th:value="${employee.id}" name="id" type="hidden"/>
+        <div class="form-group">
+            <label for="firstname">Nombre del equipo </label>
+            <input type="text" class="form-control" name="nombre" id="firstname"/>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Tag</label>
+            <input type="text" class="form-control" name="tag" id="lastname"/>
+        </div>
+        <div class="form-group">
+            <label for="title">Nombre del capitan</label>
+            <input type="text" class="form-control" name="nombre_capitan" id="title"/>
+        </div>
+        <div class="form-group">
+            <label for="titleofcourtesy">Cantidad de jugadores</label>
+            <input type="text" class="form-control" name="cantidad_jugadores" placeholder="Mr. Ms. Dr. etc"
+                   id="titleofcourtesy"/>
+        </div>
+        <div class="form-group">
+            <label for="birthdate">Juego</label>
+            <input type="text" class="form-control" name="juego" placeholder="dd-MM-yyyy" id="birthdate"/>
+        </div>
+        <div class="form-group">
+            <label for="country">Pais</label>
+            <input type="text" class="form-control" name="pais" id="country"/>
+        </div>
+        <div class="form-group">
+            <label for="correo">Correo de contacto</label>
+            <input type="text" class="form-control" name="correo" id="correo"/>
+        </div>
+        <div class="form-group">
+            <label for="homephone">Teléfono</label>
+            <input type="text" class="form-control" name="telefono" id="homephone"/>
+        </div>
+        <a th:href="@{'/employee'}" class="btn btn-danger">Cancelar</a>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+
+    </form>
+</div>
+</body>
+</html>
